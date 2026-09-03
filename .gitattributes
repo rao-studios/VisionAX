@@ -1,0 +1,15 @@
+# WHAT: The trained classifier is a binary that changes on every retrain.
+# PIN:  LFS, not the object store — a 10-20 MB .onnx committed directly would be kept
+#       forever, once per training run, in every clone. The Swift loader detects an
+#       un-pulled pointer file and says so, rather than handing ORT 130 bytes of text.
+Sources/VisionAX/Resources/Models/*.onnx filter=lfs diff=lfs merge=lfs -text
+
+# Fixture models are tiny (a few KB) and must survive a clone with no LFS at all,
+# because they are what proves the runtime works. They stay in git proper.
+Tests/VisionAXTests/Fixtures/*.onnx -filter -diff -merge binary
+
+# Real captures of real players, about a megabyte each and never edited again. LFS for
+# the same reason the model is: they would otherwise sit in every clone forever. The
+# tests that read them detect an un-pulled pointer and SKIP with a sentence saying so,
+# rather than failing as if the detector had broken.
+Tests/VisionAXTests/Fixtures/media/*.png filter=lfs diff=lfs merge=lfs -text

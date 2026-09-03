@@ -1,0 +1,33 @@
+# WHAT: The real-page half of the corpus. One URL per line; # starts a comment.
+# PIN:  Public, stable, structurally varied pages. The synthetic generator supplies
+#       class balance; this list supplies the visual variety no generator invents —
+#       real type scales, real density, real inconsistency. Keep it broad rather than
+#       long: fifty different KINDS of page beat a thousand pages from one framework.
+https://en.wikipedia.org/wiki/Accessibility
+https://en.wikipedia.org/wiki/Computer_vision
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
+https://developer.apple.com/design/human-interface-guidelines/buttons
+https://www.w3.org/WAI/ARIA/apg/patterns/
+https://www.w3.org/WAI/ARIA/apg/patterns/combobox/
+https://www.w3.org/WAI/ARIA/apg/patterns/table/
+https://github.com/apple/swift
+https://github.com/opencv/opencv
+https://news.ycombinator.com/
+https://lobste.rs/
+https://swift.org/documentation/
+https://onnxruntime.ai/docs/
+https://pytorch.org/docs/stable/index.html
+https://docs.python.org/3/library/index.html
+https://getbootstrap.com/docs/5.3/components/buttons/
+https://getbootstrap.com/docs/5.3/forms/overview/
+https://tailwindcss.com/docs/installation
+https://developer.mozilla.org/en-US/
+https://www.gov.uk/
+https://www.gov.uk/browse/benefits
+https://arxiv.org/list/cs.CV/recent
+https://stackoverflow.com/questions
+https://www.bbc.com/news
+https://www.nytimes.com/
+https://wikipedia.org/
+https://example.com/

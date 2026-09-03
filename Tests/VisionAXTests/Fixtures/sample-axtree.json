@@ -1,0 +1,93 @@
+{
+  "frame" : {
+    "height" : 600,
+    "width" : 800,
+    "x" : 0,
+    "y" : 0
+  },
+  "id" : 1,
+  "isMain" : true,
+  "isMinimized" : false,
+  "isTruncated" : false,
+  "root" : {
+    "category" : "window",
+    "children" : [
+      {
+        "category" : "other",
+        "children" : [
+          {
+            "category" : "other",
+            "children" : [
+            ],
+            "frame" : {
+              "height" : 60,
+              "width" : 720,
+              "x" : 40,
+              "y" : 40
+            },
+            "id" : 3,
+            "isEnabled" : true,
+            "isFocused" : false,
+            "role" : "VXRegion",
+            "subtreeCount" : 1
+          },
+          {
+            "category" : "other",
+            "children" : [
+              {
+                "category" : "other",
+                "children" : [
+                ],
+                "frame" : {
+                  "height" : 44,
+                  "width" : 160,
+                  "x" : 80,
+                  "y" : 160
+                },
+                "id" : 5,
+                "isEnabled" : true,
+                "isFocused" : false,
+                "role" : "VXRegion",
+                "subtreeCount" : 1
+              }
+            ],
+            "frame" : {
+              "height" : 440,
+              "width" : 720,
+              "x" : 40,
+              "y" : 120
+            },
+            "id" : 4,
+            "isEnabled" : true,
+            "isFocused" : false,
+            "role" : "VXRegion",
+            "subtreeCount" : 2
+          }
+        ],
+        "frame" : {
+          "height" : 560,
+          "width" : 760,
+          "x" : 20,
+          "y" : 20
+        },
+        "id" : 2,
+        "isEnabled" : true,
+        "isFocused" : false,
+        "role" : "VXRegion",
+        "subtreeCount" : 4
+      }
+    ],
+    "frame" : {
+      "height" : 600,
+      "width" : 800,
+      "x" : 0,
+      "y" : 0
+    },
+    "id" : 1,
+    "isEnabled" : true,
+    "isFocused" : false,
+    "role" : "AXWindow",
+    "subtreeCount" : 5
+  },
+  "title" : "sample-screenshot.png"
+}

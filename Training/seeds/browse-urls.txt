@@ -1,0 +1,67 @@
+# WHAT: Public pages the harvester renders offscreen, for the shapes a browsing turn
+#       actually meets: results lists, media grids, watch pages, docs search, shops.
+# PIN:  DATA, NOT CODE. No Swift file may name an application or a site — the doctrine
+#       test reads the sources, and these belong here for the same reason a package's
+#       bundle identifiers do. A line starting with # is a note.
+# PIN:  PUBLIC PAGES ONLY, rendered read-only in an offscreen web view. Nothing here is
+#       signed in, nothing is posted, and nothing personal is fetched.
+#
+# --- search results, several engines, several shapes of query
+https://duckduckgo.com/html/?q=alpine+touring+boots
+https://duckduckgo.com/html/?q=how+to+replace+a+bicycle+chain
+https://duckduckgo.com/html/?q=weather+in+reykjavik
+https://duckduckgo.com/html/?q=best+noise+cancelling+headphones
+https://duckduckgo.com/html/?q=python+list+comprehension
+https://duckduckgo.com/html/?q=lasagne+recipe
+https://duckduckgo.com/html/?q=train+times+edinburgh+london
+https://duckduckgo.com/html/?q=what+is+a+mortgage
+https://lite.duckduckgo.com/lite/?q=climbing+shoes
+https://lite.duckduckgo.com/lite/?q=swift+concurrency
+https://search.marcia.us/search?q=touring+skis
+https://www.mojeek.com/search?q=alpine+touring+boots
+https://www.mojeek.com/search?q=open+source+licences
+https://www.mojeek.com/search?q=espresso+machine+reviews
+https://search.brave.com/search?q=hiking+trails+scotland
+https://www.startpage.com/sp/search?query=film+cameras
+#
+# --- reference and documentation, which are results pages with a different skin
+https://en.wikipedia.org/wiki/Special:Search?search=mountaineering
+https://en.wikipedia.org/wiki/Ski_touring
+https://en.wikipedia.org/wiki/Espresso
+https://developer.mozilla.org/en-US/search?q=fetch
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+https://docs.python.org/3/search.html?q=asyncio
+https://doc.rust-lang.org/std/index.html
+#
+# --- long article pages: prose, headings, sidebars, related links
+https://en.wikipedia.org/wiki/Web_accessibility
+https://en.wikipedia.org/wiki/Optical_character_recognition
+https://www.gutenberg.org/ebooks/search/?query=adventure
+https://www.gutenberg.org/browse/scores/top
+#
+# --- media: home, results, and a watch page
+https://www.youtube.com/
+https://www.youtube.com/results?search_query=lofi+beats
+https://www.youtube.com/results?search_query=alpine+touring+technique
+https://www.youtube.com/watch?v=jfKfPfyJRdk
+https://vimeo.com/watch
+https://vimeo.com/search?q=mountains
+https://peertube.tv/
+https://archive.org/details/movies
+#
+# --- shops and listings: cards in a grid, filters, prices
+https://www.gutenberg.org/ebooks/bookshelf/
+https://news.ycombinator.com/
+https://news.ycombinator.com/newest
+https://lobste.rs/
+https://github.com/search?q=onnx&type=repositories
+https://github.com/apple/swift
+https://pypi.org/search/?q=numpy
+https://crates.io/search?q=serde
+#
+# --- forms, and pages that put a consent wall in front of themselves
+https://www.w3.org/WAI/ARIA/apg/patterns/
+https://www.w3schools.com/html/html_forms.asp
+https://httpbin.org/forms/post
+https://www.theguardian.com/international
+https://www.bbc.co.uk/news

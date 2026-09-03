@@ -1,0 +1,48 @@
+# WHAT: The one place training is configured.
+# PIN:  long_side is the setting that decides whether small controls survive. A 2x
+#       retina capture resized to 1280 makes a 32px checkbox 14px — under two stride-8
+#       cells, which is not enough for the head to see anything. Sweep it against
+#       size-bucket F1 rather than guessing.
+
+backbone: resnet18          # or mnv3l
+# A ceiling, not a target — it never upscales. The corpus renders at 1x (1280-wide
+# captures), and a 2x retina screenshot of the same layout resizes to 1600, so a
+# control occupies the same FRACTION of the input either way. That is what makes one
+# long_side correct for both.
+long_side: 1600
+pad_multiple: 32
+roi_size: 7
+stride: 8
+context_scale: 2.0
+feature_channels: 128
+
+# Measured on this corpus with `tools/device_bench.py`: 0.19s per image ON THE CPU, so an
+# epoch over ~2,980 training images is about nine minutes. NOT on the GPU — the same step
+# takes 4.55s on MPS, which is 226 minutes an epoch; see `train.device_for`. The best
+# checkpoint is kept every epoch, so a longer run only ever improves on it.
+epochs: 14
+# Stop when macro-F1 stops improving: the last run peaked at epoch 6 of 8 and fell,
+# so a fixed epoch count either stops short or spends half an hour making it worse.
+patience: 3
+images_per_step: 8          # gradient accumulation: one image is one forward pass
+boxes_per_image: 192
+backbone_lr: 0.0001
+head_lr: 0.001
+weight_decay: 0.0001
+label_smoothing: 0.05
+# 0 = uniform. The sampler already balances; weighting the loss as well corrects the
+# same imbalance twice and diverges (top-1 0.725 -> 0.042 in one epoch).
+class_weight_power: 0.0
+dropout: 0.2
+
+# Matching, re-applied from the IoUs stored at harvest time.
+positive_iou: 0.5
+ignore_floor: 0.3
+# A class with fewer than this many training boxes is folded into `none` and reported.
+# A class the model sees twice cannot be learned, but it CAN be confidently wrong.
+min_class_count: 200
+# `none` is the majority class by a wide margin; left alone it swallows the loss.
+none_fraction: 0.5
+
+seed: 20260903
+val_fraction: 0.15

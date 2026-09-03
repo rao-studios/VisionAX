@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Linked into __TEXT,__info_plist (Package.swift), so the bare
+	     .build binary is a real app with this identity — no .app wrapper
+	     needed. Same recipe as Mary's Sand. -->
+	<key>CFBundleIdentifier</key>
+	<string>nyc.rao.visionax.bench</string>
+	<!-- WHICH BINARY LAUNCHES. Absent, Launch Services guesses. -->
+	<key>CFBundleExecutable</key>
+	<string>VisionAXBench</string>
+	<key>CFBundleName</key>
+	<string>VisionAX Bench</string>
+	<key>CFBundleDisplayName</key>
+	<string>VisionAX Bench</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>15.0</string>
+	<!-- No NS*UsageDescription: the bench reads images the user opens and
+	     asks the system for nothing else. No TCC, so no stable signing. -->
+</dict>
+</plist>

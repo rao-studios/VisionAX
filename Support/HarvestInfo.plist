@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- ITS OWN IDENTITY, NOT THE BENCH'S AND NOT MARY'S. The harvester is the only
+	     part of VisionAX that asks for Accessibility and Screen Recording, and it asks
+	     under this id — so granting the data collector never grants the assistant, and
+	     revoking one does not disable the other. Same reasoning as Mary's SandInfo.plist. -->
+	<key>CFBundleIdentifier</key>
+	<string>nyc.rao.visionax.harvest</string>
+	<key>CFBundleExecutable</key>
+	<string>VisionAXHarvest</string>
+	<key>CFBundleName</key>
+	<string>VisionAX Harvest</string>
+	<key>CFBundleDisplayName</key>
+	<string>VisionAX Harvest</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>15.0</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>VisionAX</string>
+</dict>
+</plist>
