@@ -373,7 +373,8 @@ That is a measured choice. Overlap alone scored a magnifier drawn with a 3px str
 a checkmark as a magnifier: two icons of the same shape barely overlap when their strokes
 differ by a pixel, because a stroke is mostly edge. Softening each mask into a field and
 correlating them scores every independently drawn icon in the test fixture between 0.79
-and 0.996, with a blank button at 0.0 and the floor at 0.55.
+and 0.996, with a blank button at 0.0 and the floor at 0.72 — raised from 0.55 when a
+live watch page had two dozen patches of video picture named as icons.
 
 It is a fallback rung, never an oracle: an icon under the floor keeps its position and is
 still pressable as "button 4".
