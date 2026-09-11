@@ -1,4 +1,4 @@
-"""`vxtrain` — stats, train, eval, calibrate, export, parity."""
+"""`vxtrain` — stats, train, eval, calibrate, export, export-mlx, parity."""
 
 from __future__ import annotations
 
@@ -39,6 +39,10 @@ def main() -> None:
     p.add_argument("--run", type=Path, required=True)
     p.add_argument("--out", type=Path, required=True)
     p.add_argument("--name", default="region-classifier")
+
+    p = sub.add_parser("export-mlx",
+                       help="convert a spec's ONNX backbone into MLX weights (Frigate's Metal path)")
+    p.add_argument("--spec", type=Path, required=True)
 
     p = sub.add_parser("parity", help="torch vs ONNX Runtime on real images")
     p.add_argument("--spec", type=Path, required=True)
@@ -117,6 +121,10 @@ def main() -> None:
     elif args.command == "export":
         from .export import run
         run(args.run, args.out, args.name)
+
+    elif args.command == "export-mlx":
+        from .export_mlx import run
+        run(args.spec)
 
     elif args.command == "parity":
         from .parity import run

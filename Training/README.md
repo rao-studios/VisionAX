@@ -1,7 +1,8 @@
 # Training
 
-Trains the region-role classifier VisionAX runs on-device, and exports it to the two
-ONNX graphs `Sources/CVisionAX/Classifier.cpp` loads.
+Trains the region-role classifier that Frigate's VisionAX runtime runs on-device, and
+exports it to the two ONNX graphs Frigate's `Sources/CVisionAX/Classifier.cpp` loads —
+into `../../Frigate/Sources/FrigateVisionAX/Resources/Models` when run from here.
 
 ## Setup
 
@@ -30,3 +31,8 @@ graph in the middle.
   sampling ratio to 0, so training with anything else means serving a different model.
 - `preprocess.py` is the contract with `ClassifierPreprocess.cpp`. Change one, change
   both, and let the parity test prove it.
+- The MLX backbone (`export_mlx.py`) is converted from the exported ONNX graph, never from
+  the checkpoint, and stamped with that graph's sha256. Frigate refuses weights whose stamp
+  differs, and the converter refuses any graph that is not the `resnet18-fpn8` architecture
+  Frigate's `RegionBackboneNet` implements — change the backbone in `model.py` and both
+  sides must change with it.

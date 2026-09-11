@@ -1,11 +1,14 @@
 #!/bin/bash
 # WHAT: Build + stable-sign + run the harvester.
-# OUT:  sign-binary.sh, then exec .build/$CONFIG/VisionAXHarvest
+# OUT:  sign-binary.sh, then exec Tools/.build/$CONFIG/VisionAXHarvest
 # PIN:  Its own script and its own bundle id, so the Accessibility and Screen Recording
 #       grants belong to the data collector alone — granting the harvester never grants
 #       the bench, and revoking one leaves the other alone. Same reasoning as Mary's
 #       scripts/sand.sh. Signing matters here and not for the bench, because only this
 #       target asks for TCC permissions.
+#       THE HARVESTER LIVES IN Tools/, a second package: it proposes boxes with Frigate's
+#       VisionAX runtime, and Frigate depends on this repository's VisionAXCore. Datasets
+#       still land relative to the repository root (`--out Dataset`).
 #
 #   ./scripts/harvest.sh                                  # prints the usage
 #   ./scripts/harvest.sh --web-synthetic 300 --out Dataset --quit-when-done
@@ -19,14 +22,14 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 CONFIG="${CONFIG:-debug}"
 cd "$REPO_ROOT"
 
-echo "▸ swift build --product VisionAXHarvest ($CONFIG)"
+echo "▸ swift build --package-path Tools --product VisionAXHarvest ($CONFIG)"
 if [ "$CONFIG" = "release" ]; then
-    swift build -c release --product VisionAXHarvest
+    swift build --package-path Tools -c release --product VisionAXHarvest
 else
-    swift build --product VisionAXHarvest
+    swift build --package-path Tools --product VisionAXHarvest
 fi
 
-BIN="$REPO_ROOT/.build/$CONFIG/VisionAXHarvest"
+BIN="$REPO_ROOT/Tools/.build/$CONFIG/VisionAXHarvest"
 "$REPO_ROOT/scripts/sign-binary.sh" "$BIN"
 
 exec "$BIN" "$@"

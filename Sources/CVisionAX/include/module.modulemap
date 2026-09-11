@@ -1,4 +1,0 @@
-module CVisionAX {
-    header "visionax.h"
-    export *
-}

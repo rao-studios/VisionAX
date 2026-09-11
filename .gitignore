@@ -64,7 +64,10 @@ fastlane/test_output
 
 # Harvested training data — regenerate with scripts/harvest.sh, never commit.
 # A dataset is hundreds of MB of PNGs and is reproducible from its seeds and URLs.
-Dataset/
+# PIN: ANCHORED TO THE ROOT. An unanchored `Dataset/` also matched the dataset SCHEMA's
+#      source directory, and those Swift files were silently never committed — a fresh
+#      clone did not build.
+/Dataset/
 
 # Python training environment and run artifacts.
 Training/.venv/
@@ -73,3 +76,4 @@ Training/**/__pycache__/
 
 # Local editor run configuration — paths and args are per-machine.
 .vscode/launch.json
+.claude/settings.json

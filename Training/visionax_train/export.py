@@ -141,4 +141,10 @@ def run(run_dir: Path, out_dir: Path, name: str = "region-classifier",
     spec_path.write_text(json.dumps(table, indent=2, sort_keys=True) + "\n")
     print(f"exported {backbone_path.name}, {head_path.name}, {spec_path.name}")
     print(f"  min_confidence {threshold:.3f}  classes {len(roles)}")
+
+    # THE MLX BACKBONE SHIPS WITH EVERY EXPORT, converted from the ONNX file just written —
+    # never from the checkpoint — so Frigate's Metal path serves exactly what ONNX Runtime
+    # serves, and the spec it rewrites records both.
+    from .export_mlx import run as export_mlx
+    export_mlx(spec_path)
     return spec_path

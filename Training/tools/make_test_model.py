@@ -2,8 +2,9 @@
 
 WHAT: two tiny ONNX graphs with hand-set weights, a test image, and the exact
       probabilities they produce.
-OUT:  Tests/VisionAXTests/Fixtures/tiny-classifier.{json,backbone.onnx,head.onnx,
-      image.png,expected.json}
+OUT:  Frigate's Tests/FrigateVisionAXTests/Fixtures/tiny-classifier.{json,backbone.onnx,
+      head.onnx,image.png,expected.json} — the runtime and its tests live in Frigate,
+      so from Training/: `--out ../../Frigate/Tests/FrigateVisionAXTests/Fixtures`.
 PIN:  NO TRAINING HAPPENS HERE, and that is the point. The runtime has to be provable
       before a real model exists, and a fixture whose answer is a known function of the
       input turns "the classifier works" into an arithmetic check. The weights make the

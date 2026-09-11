@@ -1,7 +1,7 @@
 """The preprocessing contract, shared by training, export and parity checking.
 
 WHAT: image -> normalized CHW tensor; boxes -> [N,5] RoIAlign rois.
-OUT:  the exact operations Sources/CVisionAX/ClassifierPreprocess.cpp performs.
+OUT:  the exact operations Frigate's Sources/CVisionAX/ClassifierPreprocess.cpp performs.
 PIN:  THIS FILE AND ITS C++ TWIN MUST AGREE TO THE LAST BIT. A model trained on
       PIL-resized pixels and served on cv::INTER_AREA-resized pixels is a model that
       quietly loses a few points of accuracy with nothing in any log to say why.
